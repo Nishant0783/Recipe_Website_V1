@@ -39,11 +39,11 @@ exports.exploreCategories = async(req, res)=>{
      
         const limitNumber = 20;
         const categories = await Category.find({}).limit(limitNumber);
-        const categoriesName = await Category.find({}).limit(limitNumber);
+        const categoryId = "Explore Latest";
 
         
  
-        res.render('categories', {title: 'Cooking Blog -Categories', categories});
+        res.render('categories', {title: 'Cooking Blog -Categories', categories, categoryId});
     }catch(err){
         res.status(500).send({message: err.message || "Error Occured"});
     }
